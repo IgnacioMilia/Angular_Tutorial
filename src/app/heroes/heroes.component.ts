@@ -31,4 +31,8 @@ export class HeroesComponent {
     this.heroes = this.heroes.filter(h => h !== hero);
     this.heroService.deleteHero(hero.id).subscribe();
   }
+  select(hero: Hero): void {
+    hero.selected = !hero.selected;
+    this.heroService.updateHero(hero).subscribe();
+  }
 }

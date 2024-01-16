@@ -17,16 +17,6 @@ export class HeroService {
   constructor(private http: HttpClient,
     private messageService: MessageService) { }
 
-  // no funcionaría asíncronamente
-  // getHeroes(): Hero[] {
-  //   return HEROES;
-  // }
-  // getHeroes(): Observable<Hero[]> {
-  //   const heroes = of(HEROES);
-  //   this.messageService.add('HeroService: fetched heroes');
-  //   return heroes;
-  // }
-  /** GET heroes from the server */
   getHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.heroesUrl)
     .pipe(
@@ -35,11 +25,6 @@ export class HeroService {
     );
 }
   getHero(id: number): Observable<Hero> {
-    // For now, assume that a hero with the specified `id` always exists.
-    // Error handling will be added in the next step of the tutorial.
-    // const hero = HEROES.find(h => h.id === id)!;
-    // this.log(`fetched hero id=${id}`);
-    // return of(hero);
     const url = `${this.heroesUrl}/${id}`
     return this.http.get<Hero>(url).pipe(
       tap(_ => this.log(`fetched hero id=${id}`)),
