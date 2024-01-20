@@ -96,3 +96,16 @@ button.delete:hover, button.select:hover {
   background-color: #525252;
   color: white;
 }
+.power {
+  font-weight: bold;
+  color: white;
+  padding: 0.1em;
+  border-radius: 0.2em;
+}
+.power span{
+  background-color: orange;
+  display: inline-block;
+  height: 1em;
+  width: 3px;
+  margin-right: 2px;
+}

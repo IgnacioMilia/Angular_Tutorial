@@ -2,7 +2,9 @@
 <ul class="heroes">
   <li *ngFor="let hero of heroes">
     <a routerLink="/detail/{{hero.id}}">
-      <span class="badge">{{hero.id}}</span>{{hero.name}}
+      <span class="badge">{{hero.id}}</span>
+      {{hero.name}}
+      <span class="power"><span *ngFor="let i of [].constructor(hero.power)"></span></span>
     </a>
     <button [ngClass]="{'selected': hero.selected}" type="button" class="select" title="select hero"
       (click)="select(hero)">s</button>

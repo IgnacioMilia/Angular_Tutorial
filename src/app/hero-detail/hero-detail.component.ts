@@ -33,4 +33,10 @@ export class HeroDetailComponent {
       .subscribe(() => this.goBack())
     }
   }
+  select(): void {
+    if(this.hero) {
+      this.hero.selected = !this.hero.selected;
+      this.heroService.updateHero(this.hero).subscribe();
+    }
+  }
 }

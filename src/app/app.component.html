@@ -3,6 +3,7 @@
     <a routerLink='/dashboard'>Dashboard</a>
     <a routerLink='/heroes'>Heroes</a>
     <a routerLink='/add/heroes'>Add Hero</a>
+    <app-hero-search *ngIf="this.route.snapshot.url[0] in ['/dashboard', '/heroes']"></app-hero-search>
 </nav>
 <router-outlet></router-outlet>
 <app-messages></app-messages>
